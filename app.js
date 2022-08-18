@@ -4,12 +4,13 @@ const mongoose = require("mongoose");
 const productRouter = require("./app/product/router");
 var cors = require("cors");
 const PORT = process.env.PORT || 3000;
+const { secretkey } = require("./config/config");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-const url = `mongodb+srv://admin:admin@cluster0.qqahlie.mongodb.net/?retryWrites=true&w=majority`;
+const url = secretkey;
 
 const connectionParams = {
   useNewUrlParser: true,
