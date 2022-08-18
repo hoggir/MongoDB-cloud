@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
-const port = 3006;
 const mongoose = require("mongoose");
 const productRouter = require("./app/product/router");
 var cors = require("cors");
+const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -30,4 +30,4 @@ app.get("/", (req, res) => {
 
 app.use("/api", productRouter);
 
-app.listen(port, () => console.log("Server: http://localhost:3000"));
+app.listen(PORT, () => console.log("Server: http://localhost: " + PORT));
