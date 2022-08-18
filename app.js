@@ -3,9 +3,11 @@ const app = express();
 const port = 3006;
 const mongoose = require("mongoose");
 const productRouter = require("./app/product/router");
+var cors = require("cors");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 const url = `mongodb+srv://admin:admin@cluster0.qqahlie.mongodb.net/?retryWrites=true&w=majority`;
 
